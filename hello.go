@@ -14,6 +14,17 @@ func main() {
 	y := 42
 	fmt.Println("y: ", y)
 	fmt.Printf("y is of Type %T\n", y)
+
+	// mixed variable declaration
+	// mixed variable types can be declared using type inference
+	var a, b, c = -3, 5.0, "A Prayer Before Dawn"
+	fmt.Printf("a: ", a)
+	fmt.Println("b: ", b)
+	fmt.Println("c: ", c)
+	fmt.Printf("a is type of %T\n", a)
+	fmt.Printf("b is type of %T\n", b)
+	fmt.Printf("c is type of %T\n", c)
+
 }
 
 // variables
