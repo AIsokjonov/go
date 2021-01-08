@@ -1,6 +1,11 @@
 package main
 import "fmt"
 
+// variables
+var i, j, k int
+var sch, ch byte
+var f, salary float32
+
 func main() {
 	fmt.Println("Hello, World")
 
@@ -17,17 +22,19 @@ func main() {
 
 	// mixed variable declaration
 	// mixed variable types can be declared using type inference
-	var a, b, c = -3, 5.0, "A Prayer Before Dawn"
-	fmt.Printf("a: ", a)
+	var a, b, c = 3, 5.0, "A Prayer Before Dawn"
+	fmt.Println("a: ", a)
 	fmt.Println("b: ", b)
 	fmt.Println("c: ", c)
 	fmt.Printf("a is type of %T\n", a)
 	fmt.Printf("b is type of %T\n", b)
 	fmt.Printf("c is type of %T\n", c)
 
-}
+	// constants
+	const LENGTH int = 10
+	const WIDTH int = 5
+	var area int
 
-// variables
-var i, j, k int
-var c, ch byte
-var f, salary float32
+	area = LENGTH * WIDTH
+	fmt.Println("value of area: ", area)
+}
