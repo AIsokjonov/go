@@ -14,15 +14,15 @@ func main() {
 
   switch {
     case grade == "A":
-      fmt.Printf("Excellent!")
+      fmt.Printf("Excellent!\n")
     case grade == "B", grade == "C":
-      fmt.Printf("Well done!")
+      fmt.Printf("Well done!\n")
     case grade == "D":
-      fmt.Printf("You passed!")
+      fmt.Printf("You passed!\n")
     case grade == "F":
-      fmt.Printf("Better try again!")
+      fmt.Printf("Better try again!\n")
     default:
-      fmt.Printf("Invalid grade!")
+      fmt.Printf("Invalid grade!\n")
   }
 
   fmt.Printf("Your grade is %s\n", grade)
