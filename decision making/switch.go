@@ -1,29 +1,45 @@
 package main
-import "fmt"
+import (
+  "fmt"
+  "time"
+)
 
 func main() {
-  var grade string = "B"
-  var marks int = 90
-
-  switch (marks) {
-    case 90: grade = "A"
-    case 80: grade = "B"
-    case 50, 60, 70: grade = "C"
-    default: grade = "D"
+  i := 3
+  fmt.Print("Write ", i, " as ")
+  switch i {
+    case 1:
+      fmt.Println("one")
+    case 2:
+      fmt.Println("two")
+    case 3:
+      fmt.Println("three")
   }
 
-  switch {
-    case grade == "A":
-      fmt.Printf("Excellent!\n")
-    case grade == "B", grade == "C":
-      fmt.Printf("Well done!\n")
-    case grade == "D":
-      fmt.Printf("You passed!\n")
-    case grade == "F":
-      fmt.Printf("Better try again!\n")
+  switch time.Now().Weekday() {
+    case time.Saturday, time.Sunday:
+      fmt.Println("It's the weekend and today is ", time.Now().Weekday())
     default:
-      fmt.Printf("Invalid grade!\n")
+      fmt.Println("It's a weekday and today is ", time.Now().Weekday())
   }
 
-  fmt.Printf("Your grade is %s\n", grade)
+  t := time.Now()
+  switch {
+    case t.Hour() < 12:
+      fmt.Println("It's before noon and the time is ", time.Now().Hour())
+    default:
+      fmt.Println("It's after noon and the time is ", time.Now().Hour())
+  }
+
+  whatAmI := func(i interface{}) {
+    switch t := i.(type) {
+      case bool:
+        fmt.Println("I'm a boolean")
+      case int:
+        fmt.Println("I'm an integer")
+      default:
+        fmt.Printf("Don't know %T\n", t)
+    }
+  }
+  whatAmI(23)
 }
