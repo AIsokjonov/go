@@ -41,4 +41,17 @@ func main() {
   }
   fmt.Println("2D: ", twoD)
 
+  fmt.Println("Capacity:", cap(twoD))
+  fmt.Println("Length:", len(twoD))
+
+  b := []byte{'g','o','l','a','n','g'}
+  fmt.Println("Byte:", b)
+  d := b[0:2]
+  d[1] = 'c'
+  fmt.Println("Original array:", b)
+
+  // array
+  x := [3]string{"Лайка", "Белка", "Стрелка"}
+  as := x[:] // a slice referencing the storage of x
+  fmt.Println("Storage x:", as)
 }
