@@ -54,4 +54,49 @@ func main() {
   x := [3]string{"Лайка", "Белка", "Стрелка"}
   as := x[:] // a slice referencing the storage of x
   fmt.Println("Storage x:", as)
+
+  // growing slices
+  abs := []byte{'a','b','d','u','r','a','u','f'}
+  fmt.Println("S slice:", abs)
+  v := make([]byte, len(abs), (cap(abs)+1)*2)
+  for m := range abs {
+    v[m] = abs[m]
+  }
+  fmt.Println("T slice", v)
+
+  
+  // appending manually
+  p := []byte{2, 3, 5}
+  fmt.Println("Before append():", p)
+  p = AppendByte(p, 7, 11, 13)
+  fmt.Println("After append():", p)
+
+  // appending with built-in "append()" function
+  newSlice := make([]int, 0)
+  fmt.Println("New slice:", newSlice)
+  // append(destination, valuesToAppend)
+  newSlice = append(newSlice, 1,2,3)
+  fmt.Println("Neww slice(appended):", newSlice)
+
+  // appending one slice into another
+  strSlice1 := []string{"James","Bob"}
+  strSlice2 := []string{"Jenny","Kayla"}
+
+  fmt.Println("Before appending: string #1:", strSlice1,", string #2:", strSlice2)
+  strSlice1 = append(strSlice1, strSlice2...)
+  fmt.Println("After appending:", strSlice1)
+}
+
+// func
+func AppendByte(slice []byte, data ...byte) []byte {
+  m := len(slice)
+  n := m + len(data)
+  if n > cap(slice) {
+    newSlice := make([]byte, (n + 1) * 2)
+    copy(newSlice, slice)
+    slice = newSlice
+  }
+  slice = slice[0:n]
+  copy(slice[m:n], data)
+  return slice
 }
