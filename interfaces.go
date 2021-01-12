@@ -4,50 +4,44 @@ import (
   "math"
 )
 
-// interface
 type geometry interface {
-  area() float64
-  perim() float64
+  area()
+  perim()
 }
 
-// rectangle struct
 type rect struct {
   width, height float64
 }
 
-// circle struct
 type circle struct {
   radius float64
 }
 
-// rectangle methods
-func(r rect) area() float64 {
+func(r rect) area() float64{
   return r.width * r.height
 }
 
-func(r rect) perim() float64 {
+func(r rect) perim() float64{
   return 2 * r.width + 2 * r.height
 }
 
-// circle methods
-func(c circle) area() float64 {
-  return math.Pi * c.radius * c.radius
+func(c circle) area() float64{
+  return  math.Pi * c.radius * c.radius
 }
 
-func(c circle) perim() float64 {
+func(c circle) perim() float64{
   return 2 * math.Pi * c.radius
 }
 
-func measure(g geometry) {
-  fmt.Println("Value:", g)
-  fmt.Println("Area:", g.area())
-  fmt.Println("Perimeter:", g.perim())
-}
-
 func main() {
-  r := rect{6, 4}
-  c := circle{5}
+  r := rect{width: 6, height: 3}
+  c := circle{radius: 3}
+  fmt.Println("Rectangle:", r)
+  fmt.Println("Circle:", c)
 
-  measure(r)
-  measure(c)
+  fmt.Println("\nArea of rectangle:", r.area())
+  fmt.Println("Perimeter of rectangle:", r.perim())
+
+  fmt.Println("\nArea of circle:", c.area())
+  fmt.Println("Perimeter of circle:", c.perim())
 }
