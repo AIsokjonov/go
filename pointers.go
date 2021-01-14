@@ -1,20 +1,19 @@
 package main
 import "fmt"
 
-type User struct {
-	Name	string
-	Pets	[]string
-}
-
-func (u *User) newPet() {
-	u.Pets = append(u.Pets, "Lucy")
-	fmt.Println("NewPet():", u)
-}
-
 func main() {
-	u := User{Name: "Anna", Pets: []string{"Bailey"}}
-	p := &u
-	p.newPet()
-	fmt.Println("Main method():", u)
-	fmt.Println("newPet method():", p)
+  var i1 = 5
+  fmt.Printf("An integer: %d, and its location in memory:%p\n", i1, &i1)
+  var intP *int
+  intP = &i1
+  fmt.Printf("The value at memory location %p is %d\n", intP, *intP)
+
+  // values changes
+  // when we assign a new value to the pointer
+
+  name := "Abdurauf"
+  var p *string = &name
+  fmt.Printf("\nMemory address: %p\nValue: %s\n", p, *p)
+  *p = "James"
+  fmt.Printf("\nMemory address: %p\nChanged value: %s\n", p, *p)
 }
