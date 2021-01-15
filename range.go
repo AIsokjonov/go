@@ -2,30 +2,18 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{2,3,4}
-	sum := 0
-	for _, num := range nums {
-		sum += num
-	}
-	fmt.Println("Sum:", sum)
+  str := "Go is a beautiful language"
 
-	// i returns the index
-	for i, num := range nums {
-		if num == 3 {
-			fmt.Println("index:", i)
-		}
-	}
+  // for range
+  for pos, char := range str {
+    fmt.Printf("Character on position %d is: %c \n", pos, char)
+  }
+  fmt.Println()
 
-	kvs := map[string]string{"a":"apple","b":"banana","o":"orange"}
-	for k, v := range kvs {
-		fmt.Printf("%s -> %s\n", k, v)
-	}
+  str2 := "Chinese: 日本語"
 
-	for k := range kvs {
-		fmt.Println("Key:",k)
-	}
-
-	for i, c := range "go" {
-		fmt.Println(i,c)
-	}
+  // for range
+  for pos, char := range str2 {
+    fmt.Printf("Character %c starts at byte position: %d\n", char, pos)
+  }
 }
