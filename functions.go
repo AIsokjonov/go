@@ -27,4 +27,9 @@ func main() {
   // assign a function to a variable
   sayHello := greet(name)
   fmt.Println(sayHello)
+
+  // blank identifier example
+  fmt.Println("\nArithmetic operations")
+  a1, _, a3 := arithmetic(3, 5) // the second variable is the blank identifier
+  fmt.Printf("Addition: %d\nMultiplication: %d\n", a1, a3)
 }
