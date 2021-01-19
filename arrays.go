@@ -1,40 +1,32 @@
 package main
-import "fmt"
+import (
+  "fmt"
+  "strconv"
+)
+
+// pass pointer to array
+func change(a *[4]int) (*[4]int) {
+  for i := range a {
+    a[i] = i + 1
+  }
+  return a
+}
 
 func main() {
-  // array declaration with int type
-  // if you set the length of the array while declaring it,
-  // the array initializes all the values to 0(zero)
-  var a [5]int
-  fmt.Println("empty: ", a)
-
-  a[4] = 67
-  fmt.Println("set: ", a)
-  fmt.Println("get: ", a[4])
-
-  fmt.Println("len: ", len(a))
-
-  // dynamic declaration
-  b := [5]int{12,42,-3,23,0}
-  fmt.Println("dcl: ", b)
-
-  // 2-Dimentional arrays
-  var twoD [2][3]int
-  for i := 0; i < 2; i++ {
-    for j := 0; j < 3; j++ {
-      twoD[i][j] = i + j
-    }
+  var students [5]string
+  for i := 0; i < len(students); i++ {
+    students[i] = strconv.Itoa(i)
   }
-  fmt.Println("2D array: ", twoD)
+  fmt.Printf("Array: %s\n", students)
 
-  // 3-Dimentional arrays
-  var threeD [3][2][4]int
-  for i := 0; i < 3; i++ {
-    for j := 0; j < 2; j++ {
-      for k := 0; k < 4; k++ {
-        threeD[i][j][k] = i + j + k
-      }
-    }
+  var nums [4]int
+  for i := range nums {
+    nums[i] = i * 2
   }
-  fmt.Println("3D array: ", threeD)
+  fmt.Printf("Nums: %d\n", nums)
+
+  // pass pointer
+  fmt.Printf("original(before): %d\n", nums)
+  fmt.Println(change(&nums))
+  fmt.Printf("Original(after): %d\n", nums)
 }
