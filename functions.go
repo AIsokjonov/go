@@ -30,6 +30,42 @@ func myPrint(a ...int) {
   }
 }
 
+// functions as values and parameters
+func Add(a, b int) {
+  fmt.Printf("The sum of %d and %d is: %d\n", a, b, a + b)
+}
+
+func callback(y int, f func(int, int)) {
+  f(y, 2)
+}
+
+// functions used as a filter
+type flt func(int) bool
+
+func isOdd(n int) bool {
+  if n % 2 == 0 {
+    return false
+  }
+  return true
+}
+
+func isEven(n int) bool {
+  if n % 2 == 0 {
+    return true
+  }
+  return false
+}
+
+func filter(sl[] int, f flt)[] int {
+  var res[] int
+  for _, v := range sl {
+    if f(v) {
+      res = append(res, v)
+    }
+  }
+  return res
+}
+
 func main() {
   // calling function inside function
   fmt.Printf("Value: %d\n", sum(arithmetic(20, 10)))
@@ -56,4 +92,16 @@ func main() {
 
   // variadic functions
   myPrint(1,23, 134, 41, 42, 0, -23)
+
+  // functions as parameters
+  callback(1, Add)
+
+  // functions as filters
+  fmt.Println("\nFunctions as filters")
+  slice := [] int{1,2,3,4,5,7}
+  fmt.Println("slice =", slice)
+  odd := filter(slice, isOdd)
+  fmt.Println("Odd elements of slice are:", odd)
+  even := filter(slice, isEven)
+  fmt.Println("Even elements of slice are:", even)
 }
