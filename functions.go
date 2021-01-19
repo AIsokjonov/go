@@ -66,6 +66,27 @@ func filter(sl[] int, f flt)[] int {
   return res
 }
 
+func Add2() (func(b int) int) {
+  return func(b int) int {
+    return b + 2
+  }
+}
+
+func Adder(a int) (func(b int) int) {
+  return func(b int) int {
+    return a + b
+  }
+}
+
+// non-recursive fibonacci function
+func fib() func() int {
+  a, b := 1, 1
+  return func() int {
+    a, b = b, a + b
+    return b
+  }
+}
+
 func main() {
   // calling function inside function
   fmt.Printf("Value: %d\n", sum(arithmetic(20, 10)))
@@ -76,16 +97,16 @@ func main() {
 
   // assign a function to a variable
   //sayHello := greet(name)
-  //fmt.Println(sayHello)
+  //fmt.Println(sayHello)``
 
   // blank identifier example
   fmt.Println("\nArithmetic operations")
-  a1, _, a3 := arithmetic(3, 5) // the second variable is the blank identifier
+  a1, _, a3 := arithmetic(3, 5)
   fmt.Printf("Addition: %d\nMultiplication: %d\n", a1, a3)
 
   // changing an outside variable
-  n := 0 // int variable
-  reply := &n // saves the memory address of n == pointer
+  n := 0
+  reply := &n
   Multiply(10, 5, reply)
   fmt.Println("\nMultiply:", *reply)
   fmt.Println("Multiply:", n)
@@ -104,4 +125,16 @@ func main() {
   fmt.Println("Odd elements of slice are:", odd)
   even := filter(slice, isEven)
   fmt.Println("Even elements of slice are:", even)
+
+  // functions as return values
+  p2 := Add2()
+  fmt.Printf("Call Add2 for 3 gives: %v\n", p2(3))
+  TwoAdder := Adder(2)
+  fmt.Printf("The result is: %v\n", TwoAdder(3))
+
+  // non-recursive fibonacci
+  f := fib()
+  for i := 0; i <= 9; i++ {
+    fmt.Println(i + 2, f())
+  }
 }
