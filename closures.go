@@ -1,20 +1,21 @@
 package main
 import "fmt"
 
-func intSeq() func() int {
-	i := 0
-	return func() int {
-		i++
-		return i
+func f() {
+	for i := 0; i < 1e6; i++ {
+		g := func(i int) {fmt.Printf("%d", i)}
+		g(i)
+		fmt.Printf(" - g is of type %T and has value %v\n", g, &g)
 	}
 }
 
 func main() {
-	nextInt := intSeq()
-	fmt.Println(nextInt())
-	fmt.Println(nextInt())
-	fmt.Println(nextInt())
+	f()
 
-	newInt := intSeq()
-	fmt.Println(newInt)
+	func() {
+		sum := 0.0
+		for i := 1; i <= 1e6; i++ {
+			sum += float64(i)
+		}
+	}()
 }
