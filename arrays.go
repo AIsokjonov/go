@@ -2,6 +2,7 @@ package main
 import (
   "fmt"
   "strconv"
+  "time"
 )
 
 // pass pointer to array
@@ -10,6 +11,13 @@ func change(a *[4]int) (*[4]int) {
     a[i] = i + 1
   }
   return a
+}
+
+func sum(a *[1000]int) (s int) {
+  for i := range a {
+    s += i
+  }
+  return
 }
 
 func main() {
@@ -29,4 +37,15 @@ func main() {
   fmt.Printf("original(before): %d\n", nums)
   fmt.Println(change(&nums))
   fmt.Printf("Original(after): %d\n", nums)
+
+  var bigArr [1000]int
+  for i := 0; i < 1000; i++ {
+    bigArr[i] = i + 1
+  }
+  start := time.Now()
+  fmt.Printf("\nSum: %d\n", sum(&bigArr))
+  end := time.Now()
+  delta := end.Sub(start)
+  fmt.Printf("Execution time: %s\n", delta)
+
 }
