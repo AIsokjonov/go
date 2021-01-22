@@ -41,4 +41,32 @@ func main() {
 	fmt.Println(processes)
 	fmt.Println(pros)
 	fmt.Printf("Existence: %v\n", isPresent)
+
+	capital := map[string]string{
+		"SK": "Seoul",
+		"US": "Washington",
+		"UK": "London",
+		"CHN": "Beijing",
+		"UZ": "Tashkent",
+		"RU": "Moscow",
+		"UKR": "Kyiv",
+		"EG": "Cairo",
+	}
+
+	cap, has := capital["UZ"]
+	if has {
+		fmt.Println(cap)
+	} else  {
+		fmt.Println("No capital")
+	}
+
+	fmt.Printf("\nBefore delete: %v\n", capital)
+	delete(capital, "UZ")
+	fmt.Printf("After delete: %v\n", capital)
+
+	// for range with maps
+	fmt.Println("\nIterate with - for range")
+	for key, value := range capital {
+		fmt.Println(key, value)
+	}
 }
