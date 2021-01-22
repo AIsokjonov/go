@@ -33,6 +33,9 @@ func main() {
 
 	// check the existence of key-value item
 	_, isPresent := students[5]
+
+	// delete an element with a key
+	delete(students, 1)
 	
 	fmt.Println(students)
 	fmt.Println(processes)
