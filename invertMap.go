@@ -1,6 +1,5 @@
 package main
 import "fmt"
-import "sort"
 
 func main() {
 	barVal := map[string]int{
@@ -17,23 +16,20 @@ func main() {
 		"kilo": 43,
 		"lima": 98,
 	}
+	
+	invMap := make(map[int]string, len(barVal))
 
-	fmt.Printf("Unsorted\n")
+	fmt.Printf("Before inversion:\n")
 	for k, v := range barVal {
 		fmt.Printf("key: %v\tvalue: %v\n", k, v)
 	}
 
-	keys := make([]string, len(barVal))
-	i := 0
-	for k := range barVal {
-		keys[i] = k
-		i++
+	for k, v := range barVal {
+		invMap[v] = k
 	}
 
-	sort.Strings(keys)
-
-	fmt.Printf("\nSorted\n")
-	for _, k := range keys {
-		fmt.Printf("key: %v\tvalue: %v\n", k, barVal[k])
+	fmt.Printf("\nAfter inversion:\n")
+	for k, v := range invMap {
+		fmt.Printf("key: %v\tvalue: %v\n", k, v)
 	}
 }
