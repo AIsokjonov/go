@@ -4,16 +4,16 @@ import (
 	"fmt"
 )
 
-func doubleList(n int) (*list.List) {
+func dll(n int) (*list.List) {
 	l := list.New()
-	for i := 1; i <= n; i++ {
+	for i := 0; i < n; i++ {
 		l.PushBack(i)
 	}
 	return l
 }
 
 func main() {
-	myList := doubleList(5)
+	myList := dll(5)
 	for e := myList.Front(); e != nil; e = e.Next() {
 		fmt.Println(e.Value)
 	}
