@@ -1,7 +1,6 @@
 package main
 import (
 	"fmt"
-	hl "myPackage/hello"
 )
 
 // variables
