@@ -1,5 +1,8 @@
 package main
-import "fmt"
+import (
+	"fmt"
+	hl "myPackage/hello"
+)
 
 // variables
 var i, j, k int
