@@ -1,21 +1,22 @@
 package main
+
 import (
 	"fmt"
-	"time"
 	"sort"
+	"time"
 )
 
 func main() {
 	// searching strings
-	sl := []string{"James","Bob","Robert","Mark","Alex","Mike"}
+	sl := []string{"James", "Bob", "Robert", "Mark", "Alex", "Mike"}
 	x := "Robert"
 
 	start := time.Now()
-	
+
 	fmt.Printf("Original: %v\n", sl)
 	sort.Strings(sl)
 	fmt.Printf("Sorted: %v\n", sl)
-	
+
 	fmt.Printf("\nSearch item: %v\n", x)
 	fmt.Printf("Search Result: %v\n", sort.SearchStrings(sl, x))
 
@@ -25,8 +26,8 @@ func main() {
 
 	// append
 	fmt.Println("\nAppend")
-	sl2 := []int{1,2,3,4,5}
-	sl3 := []int{6,7,8,9,10}
+	sl2 := []int{1, 2, 3, 4, 5}
+	sl3 := []int{6, 7, 8, 9, 10}
 	fmt.Printf("slice #2: %v\n", sl2)
 	fmt.Printf("slice #3: %v\n", sl3)
 

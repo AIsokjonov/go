@@ -1,4 +1,5 @@
 package main
+
 import (
 	"fmt"
 	"time"
@@ -8,7 +9,7 @@ func reverse(s string) string {
 	sl := []byte(s)
 	rev := [100]byte{}
 	j := 0
-	for i := len(sl)-1; i >= 0; i-- {
+	for i := len(sl) - 1; i >= 0; i-- {
 		rev[j] = sl[i]
 		j++
 	}

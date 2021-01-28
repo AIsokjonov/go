@@ -1,7 +1,8 @@
 package main
+
 import "fmt"
 
-var arr []byte = []byte{'a','b','a','a','a','c','d','e','f','g'}
+var arr []byte = []byte{'a', 'b', 'a', 'a', 'a', 'c', 'd', 'e', 'f', 'g'}
 
 func main() {
 	sl := make([]byte, len(arr))

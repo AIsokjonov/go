@@ -1,25 +1,26 @@
 package main
+
 import "fmt"
 
 type rect struct {
-  width, height int
+	width, height int
 }
 
-func(r *rect) area() int {
-  return r.width * r.height
+func (r *rect) area() int {
+	return r.width * r.height
 }
 
-func (r rect) perim() int{
-  return 2 * r.width + 2 * r.height
+func (r rect) perim() int {
+	return 2*r.width + 2*r.height
 }
 
 func main() {
-  r := rect{width: 8, height: 3}
-  fmt.Println("Area:", r.area())
-  fmt.Println("Perimeter:", r.perim())
+	r := rect{width: 8, height: 3}
+	fmt.Println("Area:", r.area())
+	fmt.Println("Perimeter:", r.perim())
 
-  rp := &r
-  fmt.Println("\nPointer Area:", rp.area())
-  fmt.Println("Pointer Perimeter:", rp.perim())
+	rp := &r
+	fmt.Println("\nPointer Area:", rp.area())
+	fmt.Println("Pointer Perimeter:", rp.perim())
 
 }

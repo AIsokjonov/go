@@ -1,13 +1,15 @@
 package main
+
 import "fmt"
 
 type Gender int
+
 const (
-  UNKNOWN = iota
-  FEMALE
-  MALE
+	UNKNOWN = iota
+	FEMALE
+	MALE
 )
 
 func main() {
-  fmt.Println("Value:", MALE)
+	fmt.Println("Value:", MALE)
 }

@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 func main() {
@@ -7,7 +8,7 @@ func main() {
 	fmt.Printf("Length: %d\nCapacity: %d\n", len(sl), cap(sl))
 
 	for i := 0; i < cap(sl); i++ {
-		sl = sl[0:i+1]
+		sl = sl[0 : i+1]
 		fmt.Printf("Length: %d\tCapacity: %d\n", len(sl), cap(sl))
 	}
 

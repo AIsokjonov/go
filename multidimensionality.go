@@ -1,12 +1,13 @@
 package main
+
 import "fmt"
 
 const (
-	WIDTH = 1920
+	WIDTH  = 1920
 	HEIGHT = 1080
 )
 
-type pixel int // aliasing 
+type pixel int // aliasing
 var screen [WIDTH][HEIGHT]pixel
 
 func main() {
@@ -21,8 +22,8 @@ func main() {
 	// multidimensional slices
 	students := [][]string{}
 
-	BBA := []string{"James","Bob","Robert"}
-	IT := []string{"Mike","Charles","Edmon"}
+	BBA := []string{"James", "Bob", "Robert"}
+	IT := []string{"Mike", "Charles", "Edmon"}
 
 	students = append(students, BBA)
 	students = append(students, IT)

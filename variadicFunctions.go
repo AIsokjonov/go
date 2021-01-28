@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 // variadic function accepts any number of arguments
@@ -14,10 +15,10 @@ func sum(nums ...int) {
 
 func main() {
 	sum(1, 3, 0)
-	sum(13,4312,235,-23434,234,542,134352)
+	sum(13, 4312, 235, -23434, 234, 542, 134352)
 
 	// if you already have multiple arguments in a slice
 	// apply them to a variadic function using (slice...) like this
-	nums := []int{1,2,3,4,5}
+	nums := []int{1, 2, 3, 4, 5}
 	sum(nums...)
 }

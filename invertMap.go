@@ -1,22 +1,23 @@
 package main
+
 import "fmt"
 
 func main() {
 	barVal := map[string]int{
-		"alpha": 34,
-		"bravo": 56,
+		"alpha":   34,
+		"bravo":   56,
 		"charlie": 23,
-		"delta": 87,
-		"echo": 56,
+		"delta":   87,
+		"echo":    56,
 		"foxtrot": 12,
-		"golf": 34,
-		"hotel": 16,
-		"indio": 87,
-		"juliet": 65,
-		"kilo": 43,
-		"lima": 98,
+		"golf":    34,
+		"hotel":   16,
+		"indio":   87,
+		"juliet":  65,
+		"kilo":    43,
+		"lima":    98,
 	}
-	
+
 	invMap := make(map[int]string, len(barVal))
 
 	fmt.Printf("Before inversion:\n")

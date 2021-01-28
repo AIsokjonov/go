@@ -1,7 +1,8 @@
 package main
+
 import (
-	"fmt"
 	"bytes"
+	"fmt"
 )
 
 func main() {

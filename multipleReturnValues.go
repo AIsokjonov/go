@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 func vals() (int, int) {
@@ -7,8 +8,8 @@ func vals() (int, int) {
 
 func main() {
 	a, b := vals()
-	fmt.Println("a:",a)
-	fmt.Println("b:",b)
+	fmt.Println("a:", a)
+	fmt.Println("b:", b)
 
 	_, c := vals()
 	fmt.Println("c:", c)
