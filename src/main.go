@@ -1,9 +1,9 @@
 package main
 import (
 	"fmt"
-	http "network"
+	"network"
 )
 
 func main() {
-	fmt.Println(http.Request())
+	fmt.Println(network.Request())
 }
