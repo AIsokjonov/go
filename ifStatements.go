@@ -1,8 +1,7 @@
 package main
-
 import "fmt"
 
-func main() {
+func IFSTATEMENTS() {
 	// local variable definition
 	var a int = 10
 

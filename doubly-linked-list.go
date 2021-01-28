@@ -13,7 +13,7 @@ func dll(n int) *list.List {
 	return l
 }
 
-func main() {
+func doublyLinkedList() {
 	myList := dll(5)
 	for e := myList.Front(); e != nil; e = e.Next() {
 		fmt.Println(e.Value)

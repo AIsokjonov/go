@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func NestedIfs() {
 	var a int = 100
 	var b int = 200
 

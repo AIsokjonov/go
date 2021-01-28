@@ -19,7 +19,7 @@ func Season(month int) string {
 	return ""
 }
 
-func main() {
+func Switch() {
 	var monthNum int
 	fmt.Print("Enter month Number: ")
 	fmt.Scanf("%d", &monthNum)

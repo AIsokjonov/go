@@ -47,7 +47,7 @@ func logging(s string) (n int, err error) {
 	return 7, io.EOF
 }
 
-func main() {
+func Defer() {
 	func1()
 
 	// tracing with defer

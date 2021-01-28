@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-func enlarge(n []int, l int) []int {
+func Enlarge(n []int, l int) []int {
 	ns := make([]int, len(n)*l)
 	copy(ns, n)
 	return ns
 }
 
-func insert(a []string, b []string, i int) []string {
+func Insert(a []string, b []string, i int) []string {
 	res := make([]string, len(a)+len(b))
 	at := copy(res, a[:i])
 	at += copy(res[at:], b)
@@ -16,12 +16,12 @@ func insert(a []string, b []string, i int) []string {
 	return res
 }
 
-func main() {
+func MagnifySlice() {
 	sl := []int{1, 2, 3, 4, 5}
-	fmt.Println(enlarge(sl, 4))
+	fmt.Println(Enlarge(sl, 4))
 
 	// insert a slice into another slice
 	sl2 := []string{"james", "bob"}
 	sl3 := []string{"robert", "mike"}
-	fmt.Println(insert(sl2, sl3, 1))
+	fmt.Println(Insert(sl2, sl3, 1))
 }

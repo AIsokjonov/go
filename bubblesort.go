@@ -31,7 +31,7 @@ func mySort(sl []int) []int {
 	return sl
 }
 
-func main() {
+func BubbleSort() {
 	sl := rand.Perm(1000000)
 
 	start := time.Now()

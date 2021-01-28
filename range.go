@@ -1,8 +1,7 @@
 package main
-
 import "fmt"
 
-func main() {
+func Range() {
 	str := "Go is a beautiful language"
 
 	// for range

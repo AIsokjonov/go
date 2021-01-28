@@ -4,7 +4,7 @@ import "fmt"
 
 var arr []byte = []byte{'a', 'b', 'a', 'a', 'a', 'c', 'd', 'e', 'f', 'g'}
 
-func main() {
+func GarbageCollection() {
 	sl := make([]byte, len(arr))
 	i := 0
 	tmp := byte(0)

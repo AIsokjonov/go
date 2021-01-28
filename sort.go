@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func Sort() {
 	unsorted := []int{134, 12, -14, 14, 0, 124, 1, 124143}
 
 	start := time.Now()

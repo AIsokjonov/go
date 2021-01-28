@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func main() {
+func Errors() {
 
 	// print error with fmt
 	_, err := os.Open("test.txt")

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func TypeSwitch() {
 	var x interface{}
 
 	switch i := x.(type) {

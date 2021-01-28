@@ -11,7 +11,7 @@ func Calculation() {
 	}
 }
 
-func main() {
+func Optimizing() {
 	start := time.Now()
 	Calculation()
 	end := time.Now()

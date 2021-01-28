@@ -1,8 +1,7 @@
 package main
-
 import "fmt"
 
-func main() {
+func IFELSEIF() {
 	var age int = 21
 	if age < 18 {
 		fmt.Println("Underaged!")

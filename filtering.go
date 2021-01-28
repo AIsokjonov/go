@@ -19,7 +19,7 @@ func filter(s []int, fn func(int) bool) []int {
 	return res
 }
 
-func main() {
+func Filtering() {
 	sl := make([]int, 10, 10)
 	for i := 0; i < len(sl); i++ {
 		sl[i] = i * 3

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func MapsChallenge() {
 	days := map[int]string{
 		1: "Monday",
 		2: "Tuesday",

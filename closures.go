@@ -14,7 +14,7 @@ func f() {
 	}
 }
 
-func main() {
+func Closures() {
 	f()
 
 	func() {

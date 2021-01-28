@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Goto() {
 	students := []string{"Bob", "Alex", "Mark", "Abdurauf", "Bahrom", "Abubakr"}
 	i := 0
 HERE:

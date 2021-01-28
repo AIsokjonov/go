@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func copyAndAppendSlice() {
 	// copy a slice into another slice
 	sl := []int{1, 2, 3}
 	sl_copy := make([]int, 10)

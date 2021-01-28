@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func slice_fib(n int) []int {
+func Slice_fib(n int) []int {
 	slice := make([]int, n)
 	slice[0], slice[1] = 1, 1
 	for i := 2; i < n; i++ {
@@ -11,6 +11,6 @@ func slice_fib(n int) []int {
 	return slice
 }
 
-func main() {
-	fmt.Println(slice_fib(10))
+func SliceMapTest() {
+	fmt.Println(Slice_fib(10))
 }

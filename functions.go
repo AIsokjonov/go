@@ -1,19 +1,18 @@
 package main
-
 import "fmt"
 
-func sum(a, b, c int) int {
+func Sum(a, b, c int) int {
 	return a + b + c
 }
 
-func arithmetic(a, b int) (int, int, int) {
+func Arithmetic(a, b int) (int, int, int) {
 	n1 := a + b
 	n2 := a - b
 	n3 := a * b
 	return n1, n2, n3
 }
 
-func greet(name string) string {
+func Greet(name string) string {
 	return "Hello " + name
 }
 
@@ -21,7 +20,7 @@ func Multiply(a, b int, reply *int) {
 	*reply = a * b
 }
 
-func myPrint(a ...int) {
+func MyPrint(a ...int) {
 	if len(a) == 0 {
 		return
 	}
@@ -36,28 +35,28 @@ func Add(a, b int) {
 	fmt.Printf("The sum of %d and %d is: %d\n", a, b, a+b)
 }
 
-func callback(y int, f func(int, int)) {
+func Callback(y int, f func(int, int)) {
 	f(y, 2)
 }
 
 // functions used as a filter
-type flt func(int) bool
+type Flt func(int) bool
 
-func isOdd(n int) bool {
+func IsOdd(n int) bool {
 	if n%2 == 0 {
 		return false
 	}
 	return true
 }
 
-func isEven(n int) bool {
+func ISEven(n int) bool {
 	if n%2 == 0 {
 		return true
 	}
 	return false
 }
 
-func filter(sl []int, f flt) []int {
+func FILTER(sl []int, f Flt) []int {
 	var res []int
 	for _, v := range sl {
 		if f(v) {
@@ -80,7 +79,7 @@ func Adder(a int) func(b int) int {
 }
 
 // non-recursive fibonacci function
-func fib() func() int {
+func Fib() func() int {
 	a, b := 1, 1
 	return func() int {
 		a, b = b, a+b
@@ -88,9 +87,9 @@ func fib() func() int {
 	}
 }
 
-func main() {
+func Functions() {
 	// calling function inside function
-	fmt.Printf("Value: %d\n", sum(arithmetic(20, 10)))
+	fmt.Printf("Value: %d\n", Sum(Arithmetic(20, 10)))
 
 	//fmt.Print("Enter you name: ")
 	//var name string
@@ -102,7 +101,7 @@ func main() {
 
 	// blank identifier example
 	fmt.Println("\nArithmetic operations")
-	a1, _, a3 := arithmetic(3, 5)
+	a1, _, a3 := Arithmetic(3, 5)
 	fmt.Printf("Addition: %d\nMultiplication: %d\n", a1, a3)
 
 	// changing an outside variable
@@ -113,18 +112,18 @@ func main() {
 	fmt.Println("Multiply:", n)
 
 	// variadic functions
-	myPrint(1, 23, 134, 41, 42, 0, -23)
+	MyPrint(1, 23, 134, 41, 42, 0, -23)
 
 	// functions as parameters
-	callback(1, Add)
+	Callback(1, Add)
 
 	// functions as filters
 	fmt.Println("\nFunctions as filters")
 	slice := []int{1, 2, 3, 4, 5, 7}
 	fmt.Println("slice =", slice)
-	odd := filter(slice, isOdd)
+	odd := filter(slice, IsOdd)
 	fmt.Println("Odd elements of slice are:", odd)
-	even := filter(slice, isEven)
+	even := filter(slice, ISEven)
 	fmt.Println("Even elements of slice are:", even)
 
 	// functions as return values
@@ -134,7 +133,7 @@ func main() {
 	fmt.Printf("The result is: %v\n", TwoAdder(3))
 
 	// non-recursive fibonacci
-	f := fib()
+	f := Fib()
 	for i := 0; i <= 9; i++ {
 		fmt.Println(i+2, f())
 	}

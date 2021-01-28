@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Test() {
 	k := 6
 	switch k {
 	case 4:

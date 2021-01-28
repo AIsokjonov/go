@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func Forrange() {
 	value := 0
 	screen := [1080][1920]int{}
 

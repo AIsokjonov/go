@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func ByteSlices() {
 	str := "Hello, World!"
 
 	c := []byte(str)

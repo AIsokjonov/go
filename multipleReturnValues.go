@@ -2,15 +2,15 @@ package main
 
 import "fmt"
 
-func vals() (int, int) {
+func Vals() (int, int) {
 	return 3, 7
 }
 
-func main() {
-	a, b := vals()
+func MultipleReturnValues() {
+	a, b := Vals()
 	fmt.Println("a:", a)
 	fmt.Println("b:", b)
 
-	_, c := vals()
+	_, c := Vals()
 	fmt.Println("c:", c)
 }

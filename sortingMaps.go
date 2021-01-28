@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "sort"
 
-func main() {
+func SortMaps() {
 	barVal := map[string]int{
 		"alpha":   34,
 		"bravo":   56,

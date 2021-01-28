@@ -2,23 +2,23 @@ package main
 
 import "fmt"
 
-type person struct {
+type Person struct {
 	name string
 	age  int
 }
 
-func newPerson(name string) *person {
-	p := person{name: name}
+func newPerson(name string) *Person {
+	p := Person{name: name}
 	p.age = 21
 	return &p
 }
 
-func main() {
-	fmt.Println(person{"James", 24})
-	fmt.Println(&person{"Johnson", 29})
+func Structs() {
+	fmt.Println(Person{"James", 24})
+	fmt.Println(&Person{"Johnson", 29})
 	fmt.Println(newPerson("Mark"))
 
-	s := person{"Robert", 53}
+	s := Person{"Robert", 53}
 	fmt.Println(s.name)
 
 	sp := &s

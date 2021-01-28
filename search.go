@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func Search() {
 	// searching strings
 	sl := []string{"James", "Bob", "Robert", "Mark", "Alex", "Mike"}
 	x := "Robert"

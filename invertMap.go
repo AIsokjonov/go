@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func InvertMap() {
 	barVal := map[string]int{
 		"alpha":   34,
 		"bravo":   56,

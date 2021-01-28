@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Reslice() {
 	sl := make([]int, 0, 10)
 
 	fmt.Printf("Length: %d\nCapacity: %d\n", len(sl), cap(sl))

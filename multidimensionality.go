@@ -10,7 +10,7 @@ const (
 type pixel int // aliasing
 var screen [WIDTH][HEIGHT]pixel
 
-func main() {
+func Multidimensionality() {
 	// multidimensional arrays
 	for y := 0; y < HEIGHT; y++ {
 		for x := 0; x < WIDTH; x++ {

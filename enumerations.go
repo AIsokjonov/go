@@ -10,6 +10,6 @@ const (
 	MALE
 )
 
-func main() {
+func Enumerations() {
 	fmt.Println("Value:", MALE)
 }

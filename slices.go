@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func sum(a []int) int {
+func SUM(a []int) int {
 	s := 0
 	for i := 0; i < len(a); i++ {
 		s += a[i]
@@ -13,7 +13,7 @@ func sum(a []int) int {
 	return s
 }
 
-func main() {
+func Slices() {
 	// array
 	var students = [5]string{"James", "Bob", "Mark", "Mike", "Robert"}
 	fmt.Printf("array: %s\ntype: %T\n", students, students)
@@ -47,7 +47,7 @@ func main() {
 	// slices as parameters
 	var arr2 = [5]int{2, 4, 5, 6, 7}
 	// arr2[:] is a "slice"
-	fmt.Printf("\nSlices as parameters: %d\n", sum(arr2[:]))
+	fmt.Printf("\nSlices as parameters: %d\n", SUM(arr2[:]))
 
 	// slice with make()
 	slice2 := make([]int, 10)

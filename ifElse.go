@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Ifelse() {
 	var myName string = "James"
 	if myName == "James" {
 		fmt.Println("Hello, Jamesy Boy!")

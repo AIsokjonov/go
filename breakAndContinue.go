@@ -1,8 +1,7 @@
 package main
-
 import "fmt"
 
-func main() {
+func breakAndContinue() {
 	// break statement
 	fmt.Println("Break statement: ")
 	for i := 0; i < 3; i++ {

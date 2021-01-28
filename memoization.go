@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Memoization() {
 	result := 1
 	a := 1
 	b := 1

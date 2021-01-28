@@ -5,44 +5,44 @@ import (
 	"math"
 )
 
-type geometry interface {
-	area()
-	perim()
+type Geometry interface {
+	Area()
+	Perim()
 }
 
-type rect struct {
+type Rect struct {
 	width, height float64
 }
 
-type circle struct {
+type Circle struct {
 	radius float64
 }
 
-func (r rect) area() float64 {
+func (r Rect) Area() float64 {
 	return r.width * r.height
 }
 
-func (r rect) perim() float64 {
+func (r Rect) Perim() float64 {
 	return 2*r.width + 2*r.height
 }
 
-func (c circle) area() float64 {
+func (c Circle) Area() float64 {
 	return math.Pi * c.radius * c.radius
 }
 
-func (c circle) perim() float64 {
+func (c Circle) Perim() float64 {
 	return 2 * math.Pi * c.radius
 }
 
-func main() {
-	r := rect{width: 6, height: 3}
-	c := circle{radius: 3}
+func Interfaces() {
+	r := Rect{width: 6, height: 3}
+	c := Circle{radius: 3}
 	fmt.Println("Rectangle:", r)
 	fmt.Println("Circle:", c)
 
-	fmt.Println("\nArea of rectangle:", r.area())
-	fmt.Println("Perimeter of rectangle:", r.perim())
+	fmt.Println("\nArea of rectangle:", r.Area())
+	fmt.Println("Perimeter of rectangle:", r.Perim())
 
-	fmt.Println("\nArea of circle:", c.area())
-	fmt.Println("Perimeter of circle:", c.perim())
+	fmt.Println("\nArea of circle:", c.Area())
+	fmt.Println("Perimeter of circle:", c.Perim())
 }

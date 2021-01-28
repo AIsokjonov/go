@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func Forloop() {
 	// counter-controlled iteration
 	for i := 0; i < 3; i++ {
 		fmt.Println("Hello, World!")

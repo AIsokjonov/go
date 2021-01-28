@@ -1,8 +1,7 @@
 package main
-
 import "fmt"
 
-func main() {
+func Pointers() {
 	var i1 = 5
 	fmt.Printf("An integer: %d, and its location in memory:%p\n", i1, &i1)
 	var intP *int

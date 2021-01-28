@@ -14,6 +14,6 @@ func fibs() [10]int {
 	return fib
 }
 
-func main() {
+func Fibonacci() {
 	fmt.Println(fibs())
 }

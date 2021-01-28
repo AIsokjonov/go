@@ -6,7 +6,7 @@ import (
 	"strconv"
 )
 
-func main() {
+func Regex() {
 	searchStr := "Hello, My name is Abdurauf and I'm a 24.0` y.o software developer from Uzbekistan. Currently I live and work in Seoul, South Korea"
 	pat := "[0-9]+.[0-9]+"
 

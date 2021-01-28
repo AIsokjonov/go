@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func MapSlice() {
 	// slice of maps
 	items := make([]map[int]int, 5)
 

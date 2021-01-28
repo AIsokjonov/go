@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func Bytes() {
 	var buf bytes.Buffer
 	fmt.Printf("Buffer: %v\n", &buf)
 
