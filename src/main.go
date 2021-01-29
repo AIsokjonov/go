@@ -49,4 +49,11 @@ func main() {
 	d.Framework.Name = "Nodejs"
 	d.Framework.Pl = "JS"
 	fmt.Println(d)
+
+	// anynomous structs
+	laptop := struct {
+		name, model, color string
+	}{"Dell","Dell XPS 15", "Silver"}
+
+	fmt.Printf("\nAnynomous structs:\nName: %s\nModel: %s\nColor: %s\n", laptop.name, laptop.model, laptop.color)
 }
