@@ -41,4 +41,12 @@ func main() {
 	// fmt.Println("Reference types with new()")
 	// fmt.Printf("First value: %v\n", w["first"])
 	// fmt.Printf("Second value: %v\n", w["second"])
+
+	// anynomous struct fields
+	d := new(structs.Developer)
+	d.Name = "John"
+	d.Position = "Backend"
+	d.Framework.Name = "Nodejs"
+	d.Framework.Pl = "JS"
+	fmt.Println(d)
 }

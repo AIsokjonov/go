@@ -18,3 +18,17 @@ type Bar struct {
 	ThingOne string
 	ThingTwo int
 }
+
+type Framework struct {
+	Name string
+	Pl string
+}
+
+// struct anonymous fields
+type Developer struct {
+	Name string
+	Position string
+
+	// string // anynomous field
+	Framework // anynomous field
+}
