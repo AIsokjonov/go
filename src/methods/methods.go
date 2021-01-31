@@ -1,23 +1,18 @@
-package methods
-import "fmt"
+package main
+import (
+	"fmt"
+	"math"
+)
 
-type S struct {
-	a int
+type Vertex struct {
+	X, Y float64
 }
 
-type SType S
-type SAlias = S
-type IntType int
-type IntAlias = int
-
-func (recv S) print() {
-	fmt.Printf("%t: %[1]v\n", recv)
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(v.X * v.X + v.Y * v.Y)
 }
 
-func (recv SType) print() {
-	fmt.Printf("%t: %[1]v\n", recv)
-}
-
-func (recv IntType) print() {
-	fmt.Printf("%t: %[1]v\n", recv)
+func main() {
+	v := Vertex{4, 4}
+	fmt.Println(v.Abs())
 }
