@@ -4,6 +4,7 @@ import (
 	"math"
 )
 
+// methods with struct types
 type Vertex struct {
 	X, Y float64
 }
@@ -12,7 +13,22 @@ func (v Vertex) Abs() float64 {
 	return math.Sqrt(v.X * v.X + v.Y * v.Y)
 }
 
+// methods with non-struct types
+type MyFloat float64
+
+func (m MyFloat) Sum() float64 {
+	if m < 0 {
+		return float64(-m)
+	}
+	return float64(m)
+}
+
 func main() {
-	v := Vertex{4, 4}
+	// methods for struct types
+	v := Vertex{3, 4}
 	fmt.Println(v.Abs())
+
+	// methods for non-struct types
+	f := MyFloat(-3.02345)
+	fmt.Println(f.Sum())
 }
