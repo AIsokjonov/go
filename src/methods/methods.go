@@ -19,6 +19,12 @@ func (v *Vertex) Scale(f float64) {
 	v.Y = v.Y * f
 }
 
+// above methods as a function
+func ScaleFunc(v *Vertex, f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 // methods with non-struct types
 type MyFloat float64
 
@@ -41,4 +47,15 @@ func main() {
 	// pointer receiver
 	v.Scale(7)
 	fmt.Println(v.Abs())
+
+	// methods vs functions difference
+	v2 := Vertex{3, 4}
+	v2.Scale(3)
+	ScaleFunc(&v2, 10)
+
+	p2 := &Vertex{3, 4}
+	p2.Scale(3)
+	ScaleFunc(p2, 10)
+
+	fmt.Println(v2, p2)
 }
