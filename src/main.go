@@ -3,6 +3,7 @@ import (
 	"fmt"
 	"network"
 	"structs"
+	"methods"
 )
 
 func main() {
@@ -56,4 +57,10 @@ func main() {
 	}{"Dell","Dell XPS 15", "Silver"}
 
 	fmt.Printf("\nAnynomous structs:\nName: %s\nModel: %s\nColor: %s\n", laptop.name, laptop.model, laptop.color)
+
+	// using custom package methods
+	p := new(methods.Person)
+	p.SetFirstName("Eric")
+	fmt.Println("\nSetters & Getters")
+	fmt.Println(p.FirstName())
 }

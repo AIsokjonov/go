@@ -1,27 +1,14 @@
-package main
-import "fmt"
+package methods
 
-type T struct {
-	a int
+type Person struct {
+	firstName string
+	lastName string
 }
 
-func (t T) print(message string) {
-	fmt.Println(message, t.a)
+func (p *Person) FirstName() string {
+	return p.firstName
 }
 
-func (T) hello(message string) {
-	fmt.Println("Hello!", message)
-}
-
-func callMethod(t T, method func(T, string)) {
-	method(t, "A message")
-}
-
-func main() {
-	t1 := T{10}
-	t2 := T{20}
-	var f func(T, string) = T.print
-	callMethod(t1, f)
-	callMethod(t2, f)
-	callMethod(t1, T.hello)
+func (p *Person) SetFirstName(newName string) {
+	p.firstName = newName
 }
