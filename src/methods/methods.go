@@ -1,22 +1,27 @@
 package main
 import "fmt"
 
-type List []int
+type T struct {
+	a int
+}
 
-func (l List) Len() int { return len(l) }
+func (t T) print(message string) {
+	fmt.Println(message, t.a)
+}
 
-func (l *List) Append(val int) { *l = append(*l, val) }
+func (T) hello(message string) {
+	fmt.Println("Hello!", message)
+}
+
+func callMethod(t T, method func(T, string)) {
+	method(t, "A message")
+}
 
 func main() {
-	// a bare value
-	var lst List
-	lst.Append(1)
-	fmt.Printf("%v (len: %d)\n", lst, lst.Len())
-	fmt.Printf("Type: %T\n\n", lst)
-
-	// a pointer value
-	plst := new(List)
-	plst.Append(2)
-	fmt.Printf("%v (len: %d)\n", plst, lst.Len())
-	fmt.Printf("Type: %T\n", plst)
+	t1 := T{10}
+	t2 := T{20}
+	var f func(T, string) = T.print
+	callMethod(t1, f)
+	callMethod(t2, f)
+	callMethod(t1, T.hello)
 }
