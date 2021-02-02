@@ -1,47 +1,35 @@
 package main
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
-const SIZE = 4
+const SIZE = 5
 
 type Stack struct {
-	ix 	int
-	data [SIZE]int
+	index	int
+	data	[SIZE]int
 }
 
 func (s *Stack) Push(n int) {
-	if s.ix == SIZE {
+	if s.index == SIZE {
 		return
 	}
-	s.data[s.ix] = n
-	s.ix++
+	s.data[s.index] = n
+	s.index++
 }
 
 func (s *Stack) Pop() int {
-	if s.ix > 0 {
-		s.ix--
-		element := s.data[s.ix]
-		s.data[s.ix] = 0
+	if s.index > 0 {
+		s.index--
+		element := s.data[s.index]
+		s.data[s.index] = 0
 		return element
 	}
 	return -1
 }
 
-func (s Stack) String() string {
-	str := ""
-	for ix := 0; ix < s.ix; ix++ {
-		str += "[" + strconv.Itoa(ix) + ":" + strconv.Itoa(s.data[ix]) + "]"
-	}
-	return str
-}
-
 func main() {
-	st := new(Stack)
-	st.Push(4)
-	st.Push(1)
-	st.Push(5)
-	st.Push(7)
-	fmt.Println(st.data)
+	s := &Stack{}
+	s.data = [5]int{23,52,12,76,2}
+	fmt.Println(s.data)
+
+	fmt.Println(s.Pop())
 }
