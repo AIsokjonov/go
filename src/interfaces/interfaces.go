@@ -1,19 +1,23 @@
 package main
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-type I interface {
-	M()
+type Point struct {
+	x, y float64
 }
 
-type T struct {
-	S string
+func (p *Point) Abs() float64 {
+	return math.Sqrt(p.x * p.x + p.y * p.y)
 }
 
-func (t T) M() {
-	fmt.Println(t.S)
+type NamedPoint struct {
+	Point
+	name string
 }
 
 func main() {
-	var i I = T{"BMW"}
-	i.M()
+	n := &NamedPoint{Point{3, 4}, "Pythagoras"}
+	fmt.Println(n.Abs())
 }
