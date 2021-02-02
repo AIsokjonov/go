@@ -1,14 +1,24 @@
-package methods
+package main
+import "fmt"
 
-type Person struct {
-	firstName string
-	lastName string
+type Camera struct { }
+
+func (c *Camera) TakeAPicture() string {
+	return "Click"
 }
 
-func (p *Person) FirstName() string {
-	return p.firstName
+type Phone struct { }
+
+func (p *Phone) Call() string {
+	return "Ring Ring"
 }
 
-func (p *Person) SetFirstName(newName string) {
-	p.firstName = newName
+type Smartphone struct {
+	Camera
+	Phone
+}
+
+func main() {
+	cp := &Smartphone{}
+	fmt.Println(cp.Phone.Call(), cp.Camera.TakeAPicture())
 }
