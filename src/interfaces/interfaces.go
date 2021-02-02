@@ -1,5 +1,4 @@
-package main
-import "fmt"
+package interfaces
 
 type Log struct {
 	msg string
@@ -10,12 +9,12 @@ type Customer struct {
 	Log
 }
 
-func main() {
-	c := &Customer{"Donald Trump", Log{"Make America Great Again!"}}
-	fmt.Println(c.msg)
-	c.Log.Add("by Donald Trump")
-	fmt.Println(c.msg)
-}
+// func main() {
+// 	c := &Customer{"Donald Trump", Log{"Make America Great Again!"}}
+// 	fmt.Println(c.msg)
+// 	c.Log.Add("by Donald Trump")
+// 	fmt.Println(c.msg)
+// }
 
 func (l *Log) Add(s string) {
 	l.msg += "\n" + s
