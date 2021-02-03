@@ -10,19 +10,22 @@ type T struct {
 }
 
 func (t *T) M() {
+	if t == nil {
+		fmt.Println("<nil>")
+		return
+	}
 	fmt.Println(t.S)
-}
-
-type F float64
-
-func (f F) M() {
-	fmt.Println(f)
 }
 
 func main() {
 	var i I
 
-	i = &T{"Hello"}
+	var t *T
+	i = t
+	describe(i)
+	i.M()
+
+	i = &T{"Go programming"}
 	describe(i)
 	i.M()
 }
