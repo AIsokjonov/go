@@ -1,39 +1,26 @@
 package main
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
-type Abser interface {
-	Abs() float64
+type Shaper interface {
+	Area() float32
+	Perim() float32
 }
 
-type myFloat float64
-
-func (f myFloat) Abs() float64 {
-	if f < 0 {
-		return float64(-f)
-	}
-	return float64(f)
+type Square struct {
+	side float32
 }
 
-type Vertex struct {
-	X, Y float64
+func (s *Square) Area() float32 {
+	return s.side * s.side
 }
 
-func (v *Vertex) Abs() float64 {
-	return math.Sqrt(v.X * v.X + v.Y * v.Y)
+func (s *Square) Perim() float32 {
+	return 2 * (s.side + s.side)
 }
 
 func main() {
-	var a Abser
-	f := myFloat(-math.Sqrt2)
-	v := Vertex{3, 4}
-
-	a = f
-	a = &v
-
-	a = v
-
-	fmt.Println(a.Abs())
+	sq1 := &Square{5}
+	areaIntf := Shaper(sq1)
+	fmt.Println(areaIntf.Area())
+	fmt.Println(areaIntf.Perim())
 }
