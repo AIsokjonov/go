@@ -1,4 +1,4 @@
-// detecting and converting the type of an interface variable
+// detect and convert the type of an interface variable
 package main
 import (
 	"fmt"
@@ -18,23 +18,23 @@ type Shaper interface {
 }
 
 func main() {
-	var areaIntf Shaper
-	sq1 := &Square{5}
-	areaIntf = sq1
+	var area Shaper
+	sq := &Circle{5}
+	area = sq
 
-	if t, ok := areaIntf.(*Square); ok {
-		fmt.Printf("The type of areaIntf: %T\n", t)
-	}
+	switch t := area.(type) {
+	case *Square:
+		fmt.Printf("Type Square %T with value: %v\n", t, t)
+	case *Circle:
+		fmt.Printf("Type Circle %T with value: %v\n", t, t)
 
-	if u, ok := areaIntf.(*Circle); ok {
-		fmt.Printf("The type of areaIntf: %T\n", u)
-	} else  {
-		fmt.Println("areaIntf does not contain a variable of type Circle")
+	default:
+		fmt.Printf("Unexpected type: %T", t)
 	}
 }
 
-func (sq *Square) Area() float32 {
-	return sq.side * sq.side
+func (s *Square) Area() float32 {
+	return s.side * s.side
 }
 
 func (c *Circle) Area() float32 {
