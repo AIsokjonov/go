@@ -1,19 +1,42 @@
-// interface embedding interfaces
+// detecting and converting the type of an interface variable
 package main
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-type ReadWrite interface {
-	Read(b Buffer) bool
-	Write(b Buffer) bool
+type Square struct {
+	side float32
 }
 
-type Lock interface {
-	Lock()
-	Unlock()
+type Circle struct {
+	radius float32
 }
 
-type File interface {
-	ReadWrite
-	Lock
-	Close()
+type Shaper interface {
+	Area() float32
+}
+
+func main() {
+	var areaIntf Shaper
+	sq1 := &Square{5}
+	areaIntf = sq1
+
+	if t, ok := areaIntf.(*Square); ok {
+		fmt.Printf("The type of areaIntf: %T\n", t)
+	}
+
+	if u, ok := areaIntf.(*Circle); ok {
+		fmt.Printf("The type of areaIntf: %T\n", u)
+	} else  {
+		fmt.Println("areaIntf does not contain a variable of type Circle")
+	}
+}
+
+func (sq *Square) Area() float32 {
+	return sq.side * sq.side
+}
+
+func (c *Circle) Area() float32 {
+	return c.radius * c.radius * math.Pi
 }
