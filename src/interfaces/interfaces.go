@@ -1,42 +1,41 @@
-// detect and convert the type of an interface variable
+// testing if a value implements an interface
 package main
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
-type Square struct {
-	side float32
+type List []int
+
+func (l List) Len() int { return len(l) }
+
+func (l *List) Append(val int) { *l = append(*l, val) }
+
+type Appender interface {
+	Append(int)
 }
 
-type Circle struct {
-	radius float32
-}
-
-type Shaper interface {
-	Area() float32
-}
-
-func main() {
-	var area Shaper
-	sq := &Circle{5}
-	area = sq
-
-	switch t := area.(type) {
-	case *Square:
-		fmt.Printf("Type Square %T with value: %v\n", t, t)
-	case *Circle:
-		fmt.Printf("Type Circle %T with value: %v\n", t, t)
-
-	default:
-		fmt.Printf("Unexpected type: %T", t)
+func CountInto(a Appender, start, end int) {
+	for i := start; i <= end; i++ {
+		a.Append(i)
 	}
 }
 
-func (s *Square) Area() float32 {
-	return s.side * s.side
+type Lener interface {
+	Len() int
 }
 
-func (c *Circle) Area() float32 {
-	return c.radius * c.radius * math.Pi
+func LongEnough(l Lener) bool {
+	return l.Len()*10 > 42
+}
+
+func main() {
+	var lst List
+
+	if LongEnough(lst) {
+		fmt.Printf(" - lst is long enough\n")
+	}
+
+	plst := new(List)
+	CountInto(plst, 1, 10)
+	if LongEnough(plst) {
+		fmt.Printf(" - plst is long enought\n")
+	}
 }

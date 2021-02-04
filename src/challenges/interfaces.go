@@ -1,33 +1,33 @@
 package main
 import "fmt"
 
-type Simple struct {
-	num int
-}
-
-type RSimple struct {
-	n int
-}
-
 type Simpler interface {
 	Get() int
 	Set(int)
 }
 
-func (s *Simple) Get() int {
-	return s.num
+type Simple struct {
+	n int
 }
 
-func (s *Simple) Set(n int) {
-	s.num = n
+type RSimple struct {
+	n2 int
+}
+
+func (s *Simple) Get() int {
+	return s.n
+}
+
+func (s *Simple) Set(num int) {
+	s.n = num
 }
 
 func (rs *RSimple) Get() int {
-	return rs.n
+	return rs.n2
 }
 
-func (rs *RSimple) Set(num int) {
-	rs.n = num
+func (rs *RSimple) Set(num2 int) {
+	rs.n2 = num2
 }
 
 func fI(it Simpler) int {
@@ -38,6 +38,7 @@ func fI(it Simpler) int {
 	case *RSimple:
 		it.Set(50)
 		return it.Get()
+
 	default:
 		return 99
 	}
@@ -47,6 +48,7 @@ func fI(it Simpler) int {
 func main() {
 	var s Simple
 	fmt.Println(fI(&s))
-	var r RSimple
-	fmt.Println(fI(&r))
+
+	var rs RSimple
+	fmt.Println(fI(&rs))
 }
