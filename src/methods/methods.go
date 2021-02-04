@@ -1,5 +1,4 @@
-package main
-import "fmt"
+package methods
 
 type Camera struct { }
 
@@ -16,9 +15,4 @@ func (p *Phone) Call() string {
 type Smartphone struct {
 	Camera
 	Phone
-}
-
-func main() {
-	cp := &Smartphone{}
-	fmt.Println(cp.Phone.Call(), cp.Camera.TakeAPicture())
 }
