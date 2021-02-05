@@ -1,7 +1,8 @@
-// implementation of interfaces
+// sort using interfaces
 package main
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
-func main() {
 
-}

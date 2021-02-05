@@ -1,66 +1,67 @@
 package main
 import (
 	"fmt"
-	"network"
-	"structs"
-	"methods"
+	"mysort"
 )
 
+func ints() {
+	data := []int{74, 59, 238, -784, 9845, 959, 905, 0, 0, 42, 7586, -5467984, 7586}
+	a := mysort.IntSlice(data)
+	mysort.Sort(a)
+	if !mysort.IsSorted(a) {
+		panic("fail")
+	}
+	fmt.Printf("The sorted array: %v\n", a)
+}
+
+func strings() {
+	data := []string{}
+	a := mysort.StringSlice(data)
+	mysort.Sort(a)
+	if !mysort.IsSorted(a) {
+		panic("fail")
+	}
+	fmt.Printf("The sorted array: %v\n", a)
+}
+
+type day struct {
+	num					int
+	shortName		string
+	longName		string
+}
+
+type dayArray struct {
+	data []*day
+}
+
+func (p *dayArray) Len() int						{ return len(p.data) }
+func (p *dayArray) Less(i, j int) bool	{ return p.data[i].num < p.data[j].num }
+func (p *dayArray) Swap(i, j int)				{ p.data[i], p.data[j] = p.data[j], p.data[i] }
+
+func days() {
+	Sunday := day{0, "SUN", "Sunday"}
+	Monday := day{1, "MON", "Monday"}
+	Tuesday := day{2, "TUE", "Tuesday"}
+	Wednesday := day{3, "WED", "Wednesday"}
+	Thursday := day{4, "THU", "Thursday"}
+	Friday := day{5, "FRI", "Friday"}
+	Saturday := day{6, "SAT", "Saturday"}
+	data := []*day{&Tuesday, &Thursday, &Wednesday, &Sunday, &Monday, &Friday, &Saturday}
+	a := dayArray{data}
+	mysort.Sort(&a)
+	if !mysort.IsSorted(&a) {
+		panic("fail")
+	}
+	for _, d := range data {
+		fmt.Printf("%s ", d.longName)
+	}
+	fmt.Println()
+}
+
 func main() {
-	fmt.Println(network.Request())
-
-	c := structs.NewCar("BMW", "BMW X5", "Black", 73.999)
-	fmt.Printf("Car:\nName: %v\nModel: %v\nColor: %v\nPrice: %v\n", c.Name, c.Model, c.Color, c.Price)
-
-
-	// structs with new()
-	x := new(structs.Bar)
-	(*x).ThingOne = "Hello"
-	(*x).ThingTwo = 1
-
-	fmt.Println("Structs with new()")
-	fmt.Printf("\nThingOne field: %v\n", x.ThingOne)
-	fmt.Printf("ThingTwo field: %v\n", x.ThingTwo)
-
-	// structs with make()
-	// y := make(structs.Bar)
-	// fmt.Println("\nStructs with make()")
-	// fmt.Println(y)
-
-	// reference type with make()
-	z := make(structs.Foo)
-	z["first"] = "Golang"
-	z["second"] = "C++"
-
-	fmt.Println("\nReference types with make()")
-	fmt.Printf("First value: %v\n", z["first"])
-	fmt.Printf("Second value: %v\n", z["second"])
-
-	// w := new(structs.Foo)
-	// (*w)["first"] = "Nodejs"
-	// (*w)["second"] = "Java"
-	// fmt.Println("Reference types with new()")
-	// fmt.Printf("First value: %v\n", w["first"])
-	// fmt.Printf("Second value: %v\n", w["second"])
-
-	// anynomous struct fields
-	d := new(structs.Developer)
-	d.Name = "John"
-	d.Position = "Backend"
-	d.Framework.Name = "Nodejs"
-	d.Framework.Pl = "JS"
-	fmt.Println(d)
-
-	// anynomous structs
-	laptop := struct {
-		name, model, color string
-	}{"Dell","Dell XPS 15", "Silver"}
-
-	fmt.Printf("\nAnynomous structs:\nName: %s\nModel: %s\nColor: %s\n", laptop.name, laptop.model, laptop.color)
-
-	// using custom package methods
-	p := new(methods.Person)
-	p.SetFirstName("Eric")
-	fmt.Println("\nSetters & Getters")
-	fmt.Println(p.FirstName())
+	// interface mysort
+	fmt.Println("\n\nMy Sort - custom package")
+	ints()
+	strings()
+	days()
 }
